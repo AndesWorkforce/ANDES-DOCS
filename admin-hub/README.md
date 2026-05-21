@@ -22,6 +22,7 @@ Sección de documentación centralizada del módulo **Admin Hub**: el módulo de
 | Archivo | Descripción |
 |---|---|
 | [GUIA_INCOME_VARIABLES_SENIORITY_HOLIDAYS.md](./GUIA_INCOME_VARIABLES_SENIORITY_HOLIDAYS.md) | Guía de desarrollo: Variables de ingreso, Bono de Antigüedad y Feriados (con fórmulas, endpoints y flujos) |
+| [GUIA_TESTS_BILLING_FACTURACION.md](./GUIA_TESTS_BILLING_FACTURACION.md) | Tests del flujo de facturación al cliente: unit (32 casos) + e2e secuencial (charges → credits → income vars → total) |
 
 ---
 
@@ -34,9 +35,17 @@ API-ANDES/src/admin-hub/
 │   ├── income-variables.controller.ts
 │   ├── income-variables.service.ts   ← lógica de bono antigüedad aquí
 │   └── income-variables.module.ts
+├── customer-charges/     # Cargos al cliente (EQUIPO, CAPACITACION, etc.)
+│   ├── dto/
+│   ├── customer-charges.controller.ts
+│   └── customer-charges.service.ts   ← estados: PENDIENTE → APROBADO → FACTURADO
+├── customer-credits/     # Ajustes de factura al cliente (AjusteFacturaCliente)
+│   ├── dto/
+│   ├── customer-credits.controller.ts
+│   └── customer-credits.service.ts   ← estados: PENDING → APPROVED
 ├── billing-summary/      # Resumen de facturación mensual
 │   ├── billing-summary.controller.ts
-│   └── billing-summary.service.ts
+│   └── billing-summary.service.ts    ← facturacionCliente + nominaContratista
 └── admin-hub.module.ts
 ```
 
@@ -49,3 +58,4 @@ API-ANDES/src/admin-hub/
 
 - `edc4d28` — Bono Antigüedad + Income Variables completo (API-ANDES)
 - `b5a40eb` — Guía dev Income Variables / Seniority / Holidays (ANDES-DOCS)
+- `(pendiente)` — Tests billing-summary: unit 32 casos + e2e flujo completo
