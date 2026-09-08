@@ -5,7 +5,7 @@
 **Última actualización:** 8 de septiembre de 2026  
 **FigJam de arquitectura:** [tablero Andy CLIENT + API](https://www.figma.com/board/U5q4W4fLN7rianGb83y3yM)
 
-Esta carpeta **no reemplaza** análisis históricos ni runbooks largos. Los resume y apunta a la fuente. Si hay conflicto con un documento viejo, prevalece lo que está aquí.
+Esta carpeta es la **fuente de verdad** de arquitectura y entornos. Si hay conflicto con un runbook de `SERVIDOR_DESAROLLO` o un doc de API, prevalece lo que está aquí.
 
 ---
 
@@ -59,11 +59,11 @@ Esta carpeta **no reemplaza** análisis históricos ni runbooks largos. Los resu
 
 ---
 
-## Documentos que este paquete actualiza
+## Relación con otros repos
 
-| Tema | Antes (sigue existiendo) | Ahora |
+| Tema | Fuera de ANDES-DOCS (histórico / operativo) | Aquí |
 |---|---|---|
-| Servidor test | `SERVIDOR_DESAROLLO/CONTEXTO_SERVIDOR.md` (desactualizado: puertos invertidos y checklist pendiente) | [entornos.md](./entornos.md) + [servidor.md](./responsabilidades/servidor.md) |
+| Servidor test | `SERVIDOR_DESAROLLO/` — no usar `CONTEXTO_SERVIDOR.md` como checklist | [entornos.md](./entornos.md) + [servidor.md](./responsabilidades/servidor.md) |
 | Servidor prod | `SERVIDOR_DESAROLLO/CONTEXTO_SERVIDOR_PRODUCCION.md` | [servidor.md](./responsabilidades/servidor.md) |
-| Andy / Chatwoot | `API-ANDES/docs/ANDI_CHATBOT_SYSTEM.md`, `ANDES-DOCS/informes/CONTEXTO_CHATWOOT_ANDI_FASE1_ROADMAP_FASE2.md` | [chatbot-andy.md](./responsabilidades/chatbot-andy.md) + [chatwoot.md](./responsabilidades/chatwoot.md) |
-| Diagramas | FigJam suelto + PNG en Descargas | [diagramas/](./diagramas/) |
+| Andy / Chatwoot | `API-ANDES/docs/ANDI_CHATBOT_SYSTEM.md`, `PAQUETE_ANDY_PRODUCCION/` | [chatbot-andy.md](./responsabilidades/chatbot-andy.md) + [chatwoot.md](./responsabilidades/chatwoot.md) |
+| Diagramas | FigJam | [diagramas/](./diagramas/) |

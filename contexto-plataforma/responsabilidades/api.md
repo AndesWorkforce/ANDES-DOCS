@@ -87,5 +87,3 @@ En Docker prod, `CHATWOOT_BASE_URL` debe ser el hostname interno (`http://chatwo
 | Test | scripts en el host (`deploy_api_test.sh` / PM2 restart) | no hay `deploy-test.yml` en el árbol actual de API |
 
 Migraciones: `pnpm db:migrate` (`prisma migrate deploy`). Nunca `docker compose down -v` en prod.
-
-Análisis largo (enero 2026): `ANDES-DOCS/admin-hub/ANALISIS_COMPLETO_API_ANDES.md`.

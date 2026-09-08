@@ -78,5 +78,3 @@ En test, Nginx manda `/api/chat` y `/api/chatwoot/(identity|conversations)` al p
 |---|---|---|
 | Test | push `test-development` | `.github/workflows/deploy-test.yml` → `deploy_client_test.sh` |
 | Prod | push `master` | `.github/workflows/deploy.yml` → `./deploy_client.sh` |
-
-Análisis largo (enero 2026, parcialmente viejo): `ANDES-DOCS/admin-hub/ANALISIS_COMPLETO_CLIENT_ANDES.md`.

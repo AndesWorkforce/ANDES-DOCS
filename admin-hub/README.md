@@ -1,28 +1,47 @@
 # Admin Hub — Documentación
 
-Sección de documentación centralizada del módulo **Admin Hub**: el módulo de contabilidad/nómina para administración de contratos, variables de ingreso, bonos y feriados.
+Módulo de contabilidad/nómina: contratos, variables de ingreso, bonos, feriados, cargos y créditos al cliente.
 
-> Los PR descriptions están en [`../pr-history/2026/`](../pr-history/2026/).  
-> Los scripts de video están en [`../video-scripts/`](../video-scripts/).
+Contexto de plataforma (CLIENT / API / servidores): [`../contexto-plataforma/`](../contexto-plataforma/README.md).
 
 ---
 
-## Índice de documentos
-
-### Análisis y planificación
-
-| Archivo | Descripción |
-|---|---|
-| [PLAN_ACCOUNTING_ADMIN_HUB.md](./PLAN_ACCOUNTING_ADMIN_HUB.md) | Plan completo de implementación del módulo contable (fases, sprint, modelos, endpoints) |
-| [ANALISIS_COMPLETO_API_ANDES.md](./ANALISIS_COMPLETO_API_ANDES.md) | Análisis completo del estado de la API (módulos, endpoints, guards, etc.) |
-| [ANALISIS_COMPLETO_CLIENT_ANDES.md](./ANALISIS_COMPLETO_CLIENT_ANDES.md) | Análisis completo del estado del cliente Next.js |
+## Índice vigente
 
 ### Guías de desarrollo
 
 | Archivo | Descripción |
 |---|---|
-| [GUIA_INCOME_VARIABLES_SENIORITY_HOLIDAYS.md](./GUIA_INCOME_VARIABLES_SENIORITY_HOLIDAYS.md) | Guía de desarrollo: Variables de ingreso, Bono de Antigüedad y Feriados (con fórmulas, endpoints y flujos) |
-| [GUIA_TESTS_BILLING_FACTURACION.md](./GUIA_TESTS_BILLING_FACTURACION.md) | Tests del flujo de facturación al cliente: unit (32 casos) + e2e secuencial (charges → credits → income vars → total) |
+| [GUIA_INCOME_VARIABLES_SENIORITY_HOLIDAYS.md](./GUIA_INCOME_VARIABLES_SENIORITY_HOLIDAYS.md) | Variables de ingreso, bono de antigüedad y feriados |
+| [GUIA_TESTS_BILLING_FACTURACION.md](./GUIA_TESTS_BILLING_FACTURACION.md) | Tests de facturación al cliente |
+| [FLUJO_FACTURACION_VALIDACION.md](./FLUJO_FACTURACION_VALIDACION.md) | Flujo de validación de facturas |
+| [AVISOS_MAPEO_VALIDACION.md](./AVISOS_MAPEO_VALIDACION.md) | Avisos y mapeo de validación |
+| [FORMATO_USD_ADMIN_HUB.md](./FORMATO_USD_ADMIN_HUB.md) | Formato USD |
+| [ALERTS_SETUP.md](./ALERTS_SETUP.md) | Alertas |
+| [HISTORIAS_USUARIO_VARIABLES_NOMINA.md](./HISTORIAS_USUARIO_VARIABLES_NOMINA.md) | HUs de variables de nómina |
+
+### Operación de facturas / nóminas
+
+| Archivo | Descripción |
+|---|---|
+| [RESUMEN_SINCRONIZACION_NOMINAS_FACTURAS.md](./RESUMEN_SINCRONIZACION_NOMINAS_FACTURAS.md) | Sincronización nóminas–facturas |
+| [RESUMEN_VERIFICACION_DATOS_FACTURA.md](./RESUMEN_VERIFICACION_DATOS_FACTURA.md) | Verificación de datos de factura |
+
+### Historias de usuario (API)
+
+| Archivo | Descripción |
+|---|---|
+| [../HU-19-customer-charges-management.md](../HU-19-customer-charges-management.md) | Cargos al cliente |
+| [../HU-20-customer-credits-management.md](../HU-20-customer-credits-management.md) | Créditos al cliente |
+
+### Presentación
+
+| Archivo | Descripción |
+|---|---|
+| [../PRESENTACION_ADMIN_HUB_FACTURACION.md](../PRESENTACION_ADMIN_HUB_FACTURACION.md) | Demo de facturación para administración |
+
+PRs: [`../pr-history/2026/`](../pr-history/2026/).  
+Videos: [`../video-scripts/`](../video-scripts/).
 
 ---
 
@@ -30,32 +49,11 @@ Sección de documentación centralizada del módulo **Admin Hub**: el módulo de
 
 ```
 API-ANDES/src/admin-hub/
-├── income-variables/     # Variables de ingreso (CRUD + aprobación + anulación)
-│   ├── dto/
-│   ├── income-variables.controller.ts
-│   ├── income-variables.service.ts   ← lógica de bono antigüedad aquí
-│   └── income-variables.module.ts
-├── customer-charges/     # Cargos al cliente (EQUIPO, CAPACITACION, etc.)
-│   ├── dto/
-│   ├── customer-charges.controller.ts
-│   └── customer-charges.service.ts   ← estados: PENDIENTE → APROBADO → FACTURADO
-├── customer-credits/     # Ajustes de factura al cliente (AjusteFacturaCliente)
-│   ├── dto/
-│   ├── customer-credits.controller.ts
-│   └── customer-credits.service.ts   ← estados: PENDING → APPROVED
-├── billing-summary/      # Resumen de facturación mensual
-│   ├── billing-summary.controller.ts
-│   └── billing-summary.service.ts    ← facturacionCliente + nominaContratista
+├── income-variables/
+├── customer-charges/
+├── customer-credits/
+├── billing-summary/
 └── admin-hub.module.ts
 ```
 
-## Branch activo
-
-- **API-ANDES**: `admin-hub`
-- **CLIENT-ANDES**: pendiente integración UI
-
-## Commits de referencia
-
-- `edc4d28` — Bono Antigüedad + Income Variables completo (API-ANDES)
-- `b5a40eb` — Guía dev Income Variables / Seniority / Holidays (ANDES-DOCS)
-- `(pendiente)` — Tests billing-summary: unit 32 casos + e2e flujo completo
+Rama de trabajo habitual: `admin-hub` en API-ANDES (prod sigue siendo `master`).

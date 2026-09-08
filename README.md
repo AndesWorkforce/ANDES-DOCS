@@ -1,6 +1,8 @@
 # ANDES-DOCS
 
-Documentación interna del equipo de Andes Workforce: contexto de plataforma, guías de contribución, plantillas de PR e historial de pull requests.
+Documentación interna vigente de Andes Workforce.
+
+**Empieza aquí para arquitectura y servidores:** [contexto-plataforma/README.md](contexto-plataforma/README.md)
 
 ---
 
@@ -8,19 +10,15 @@ Documentación interna del equipo de Andes Workforce: contexto de plataforma, gu
 
 ```
 ANDES-DOCS/
-├── contexto-plataforma/         # CANÓNICO: servidor, repos, Andy, diagramas
+├── contexto-plataforma/     # CANÓNICO: CLIENT, API, Andy, entornos, diagramas
+├── admin-hub/               # Nómina / facturación (guías vigentes)
+├── informes/                # Incidentes y CI/CD de test
 ├── commit-guide/
-│   └── COMMIT_GUIDE.md          # Convención de commits del equipo
 ├── pr-templates/
-│   ├── PR_BASE.md               # Plantilla base para cualquier PR
-│   ├── PR_FEATURE.md            # Plantilla para nuevas funcionalidades
-│   ├── PR_HOTFIX.md             # Plantilla para hotfixes
-│   └── PR_BUG_REPORT.md        # Plantilla para reportes de bug
-├── pr-history/
-│   └── 2026/                    # PRs por año
-├── informes/                    # Informes de bugs e incidentes
-├── admin-hub/                   # Módulo contable / nómina
-└── video-scripts/               # Guiones para videos tutoriales
+├── pr-history/2026/         # Descripciones de PRs ya merged
+├── queries/                 # SQL puntuales
+├── scripts/                 # p. ej. pgAdmin producción
+└── video-scripts/
 ```
 
 ---
@@ -30,24 +28,21 @@ ANDES-DOCS/
 | Necesito... | Ir a... |
 |---|---|
 | Entender CLIENT, API, Andy y servidores | [contexto-plataforma/README.md](contexto-plataforma/README.md) |
-| Ver diagramas de arquitectura | [contexto-plataforma/diagramas/](contexto-plataforma/diagramas/) |
+| Diagramas de Andy | [contexto-plataforma/diagramas/](contexto-plataforma/diagramas/) |
+| Admin Hub / facturación | [admin-hub/README.md](admin-hub/README.md) |
+| Incidentes | [informes/README.md](informes/README.md) |
 | Escribir un commit | [commit-guide/COMMIT_GUIDE.md](commit-guide/COMMIT_GUIDE.md) |
-| Abrir un PR nuevo | [pr-templates/PR_BASE.md](pr-templates/PR_BASE.md) |
+| Abrir un PR | [pr-templates/PR_BASE.md](pr-templates/PR_BASE.md) |
 | Ver un PR anterior | [pr-history/2026/](pr-history/2026/) |
-| Consultar un incidente | [informes/](informes/) |
+| Import masivo de contratos | [CONTRACTS_BULK_IMPORT.md](CONTRACTS_BULK_IMPORT.md) |
+| Presentación Andy | [PRESENTACION_ANDY_EMPRESA.md](PRESENTACION_ANDY_EMPRESA.md) |
 
 ---
 
-## Prefijos de tickets válidos
+## Prefijos de tickets
 
 | Prefijo | Área |
 |---|---|
 | `KAN` | Requerimientos de producto |
-| `SDT` | Cambios de infraestructura / DevOps |
+| `SDT` | Infraestructura / DevOps |
 | `RM` | Marketing |
-
----
-
-## Contacto
-
-Repositorio mantenido por el equipo de desarrollo de Andes Workforce.

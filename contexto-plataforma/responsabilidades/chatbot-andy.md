@@ -81,7 +81,6 @@ Panel interno: `https://chat.andes-workforce.com` (prod).
 **CLIENT:** `src/components/chat/*`, `src/app/api/chat/`, `src/app/api/chatwoot/`
 
 Presentación empresa: `ANDES-DOCS/PRESENTACION_ANDY_EMPRESA.md`.  
-Fase 1 / roadmap: `ANDES-DOCS/informes/CONTEXTO_CHATWOOT_ANDI_FASE1_ROADMAP_FASE2.md`.  
 Test server: `SERVIDOR_DESAROLLO/ANDI_CHATBOT_TEST_SERVER.md`.  
 Prod kit: `PAQUETE_ANDY_PRODUCCION/`.
 
